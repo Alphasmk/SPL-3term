@@ -143,7 +143,7 @@ console.log('Товары после изменений:', Array.from(products))
 console.log('Общая стоимость товаров после изменений:', getTotalCost());
 
 //4
-let cache = new WeakMap();=
+let cache = new WeakMap();
 
 function expensiveCalculation(params) {
     if (cache.has(params)) {
