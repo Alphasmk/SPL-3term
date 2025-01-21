@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра Судоку</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #fb89c4;
+    }
+    #sudoku-board {
+      display: grid;
+      grid-template-columns: repeat(9, 50px);
+      grid-template-rows: repeat(9, 50px);
+      gap: 0;
+    }
+    .cell {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 18px;
+      border: 1px solid #ccc;
+    }
+    .cell:focus {
+      outline: none;
+    }
+    .cell:nth-child(3n+1) {
+      border-left: 3px solid black;
+    }
+    .cell:nth-child(9n) {
+      border-right: 3px solid black;
+    }
+    .cell:nth-last-child(-n+9) {
+      border-bottom: 3px solid black;
+    }
+    .cell:nth-last-child(-n+27) {
+      border-top: 3px solid black;
+    }
+    .cell:nth-last-child(-n+18) {
+      border-top: 1px solid #ccc;
+    }
+    .cell:nth-child(-n+36) {
+      border-top: 3px solid black;
+    }
+    .cell:nth-child(-n+27) {
+      border-top: 1px solid #ccc;
+    }
+    .cell:nth-child(-n+9) {
+      border-top: 3px solid black;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #fb89c4;
+      color: white;
+    }
+    .error {
+      background-color: #f33646; 
+    }
+    .correct {
+      background-color: #9ef7b3; 
+    }
+  </style>
+</head>
+<body>
+  <h1>Игра Судоку</h1>
+  <div id="sudoku-board"></div>
+  <div class="buttons">
+    <button id="generate-puzzle">Новое поле</button>
+    <button id="validate-board">Проверить</button>
+    <button id="generate-solution">Сгенерировать решение</button>
+  </div>
+  <script src="sudoku.js"></script>
+</body>
+</html>
